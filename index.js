@@ -8,10 +8,10 @@ var server = http.createServer(app);
 server.listen(3000);
 
 // 시리얼 포트 설정
-// COM6 : 아두이노가 연결된 포트
+// port : 아두이노가 연결된 포트
 var serialPort  = require('serialport');
 // 아래 ####은 본인 아두이노의 시리얼 포트에 맞게 경로 입력하기
-var com6 = new serialPort('COM10',{
+var port = new serialPort('COM10',{
     baudate : 9600,
     // defaults for Arduino serial communication
     dataBits : 8,
@@ -19,7 +19,7 @@ var com6 = new serialPort('COM10',{
     stopBits: 1,
     flowControl: false
 })
-com6.on('open', function () {
+port.on('open', function () {
     console.log('open serial communication');
 })
 
@@ -35,6 +35,6 @@ app.get('/',function(req,res) {
 
 app.get('/controller/:id',function(req,res){
     console.log(req.params.id);
-    com6.write(req.params.id) ;
+    port.write(req.params.id) ;
     res.status(200).send('LED Controll OK!!');
 })
