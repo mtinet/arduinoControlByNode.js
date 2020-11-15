@@ -26,5 +26,9 @@ npm --save install ejs // ejs(embedded javaScript) 미들웨어 설치
 ```
 - test 폴더로 들어가보면 node_modules 폴더를 확인할 수 있음  
 
+### 4. 아두이노 세팅  
+- LED를 11, 12, 13번 핀에 연결  
+- GND에 연결  
+
 
 ## [참고자료 링크](https://m.blog.naver.com/touart93/221091988316)  
