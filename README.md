@@ -29,7 +29,7 @@ npm --save install ejs // ejs(embedded javaScript) 미들웨어 설치
 ### 4. 아두이노 세팅  
 - LED를 11, 12, 13번 핀에 연결  
 - GND에 연결  
-
+- iot.ino  
 ```
 #define LED_01 11
 #define LED_02 12
@@ -73,10 +73,12 @@ void loop() {
 ### 5. index.js 파일 제작  
 - UTF-8 인코딩으로 저장할 것  
 - 아래 부분의 #####는 자신의 아두이노 보드가 연결된 포트를 써줌  
-- 아두이노 IDE의 시리얼 모니터를 켜면 node가 시리얼 포트에 오류가 나므로 끄고 실핼할 것  
+- 아두이노 IDE의 시리얼 모니터를 켜면 node가 시리얼 포트에 오류가 나므로 끄고 실행할 것  
 ```
 var port = new serialPort('#####',{ 
 ```
+
+- index.js
 ```
 var express = require('express');
 var http = require('http');
@@ -123,7 +125,7 @@ app.get('/controller/:id',function(req,res){
 ### 6. test 폴더 안에 views 폴더 생성하기  
 - views 폴더 안에 controller.ejs 라는 이름으로 파일을 생성하고 아래 내용을 넣기  
 - UTF-8 인코딩으로 저장  
-
+- controller.ejs  
 ```
 <!DOCTYPE html>
 <html>
