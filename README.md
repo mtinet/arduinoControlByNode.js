@@ -120,7 +120,98 @@ app.get('/controller/:id',function(req,res){
 })
 ```
 
+### 6. test 폴더 안에 views 폴더 생성하기  
+- views 폴더 안에 controller.ejs 라는 이름으로 파일을 생성하고 아래 내용을 넣기  
+- UTF-8 인코딩으로 저장  
 
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style media="screen">
+  body{
+    background-color: black;
+    color:white;
+    border: none;
+  }
+  #A{
+    background-color: white;
+    color: grey;
+    border: none;
+  }
+  #A:hover{
+    background-color: black;
+  }
+  button[name="green"]{
+    background-color: green;
+    border: none;
+
+  }
+  button[name="green"]:hover{
+    background-color: black;
+
+  }
+  button[name="red"]{
+    background-color: red;
+    border: none;
+  }
+  button[name="red"]:hover{
+    background-color: black;
+  }
+  button[name="blue"]{
+    background-color: blue;
+    border: none;
+  }
+  button[name="blue"]:hover{
+    background-color: black;
+  }
+  #X{
+    background-color: grey;
+    color: white;
+    border: none;
+  }
+  #X:hover{
+    background-color: black;
+}
+
+</style>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.get("/controller/" + $(this).attr('id'), function(data, status){ });
+        });
+    });
+    </script>
+    <meta charset="UTF-8">
+    <title>Controll Test</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Controll Test</h2>
+        <button type="button" class="btn btn-success" id='A'>모두 켜기</button>
+
+        <button name="green" type="button" class="btn btn-warning" id='1'>초록색</button>
+        <button name="red" type="button" class="btn btn-primary" id='2'>빨간색</button>
+        <button name="blue" type="button" class="btn btn-success" id='3'>파랑색</button>
+        <button type="button" class="btn btn-default"  id='X'>모두 끄기</button>
+        </div>
+</body>
+</html>
+```
+
+### 7. node를 이용해 서버를 열기  
+```
+node index.js
+```
+
+### 8. 컴퓨터의 IP 주소를 확인하고, PC의 웹브라우저나 스마트폰을 이용해 접속  
+- 서버를 연 컴퓨터에서 자체적으로 접속할 때는 브라우저 주소창에 localhost:3000 라고 입력하여 접속함  
+- 같은 공유기 내에서는 사설 IP:3000 으로 접속함  
+- 공유기 외부에서 접속할 때는 사설 IP:3000으로 포트포워딩 설정이 된 공인 IP:포트로 접속함  
 
 
 
