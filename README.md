@@ -92,7 +92,7 @@ server.listen(3000);
 // 시리얼 포트 설정
 // port : 아두이노가 연결된 포트
 var serialPort  = require('serialport');
-// 아래 ####은 본인 아두이노의 시리얼 포트에 맞게 경로 입력하기
+// 아래 COM10은 본인 아두이노의 시리얼 포트에 맞게 경로 입력하기
 var port = new serialPort('COM10',{
     baudate : 9600,
     // defaults for Arduino serial communication
