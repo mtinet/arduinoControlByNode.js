@@ -20,7 +20,8 @@ var port = new serialPort('COM10',{
     flowControl: false
 })
 port.on('open', function () {
-    console.log('open serial communication');
+    console.log('Opened Serial Communication by COM10');
+    console.log('Open Your Web Browser and Connect to localhost:3000');
 })
 
 
